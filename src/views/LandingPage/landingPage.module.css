@@ -1,0 +1,61 @@
+@import url("https://fonts.cdnfonts.com/css/colus");
+
+.landingContainer {
+    font-family: "Colus", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    text-shadow: 4px -2px 2px rgba(0, 0, 0, 0.6);
+    font-family: "Colus", sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    width: 120px;
+    height: 50px;
+    background-color: rgba(3, 199, 88, 0.881);
+    border: 2px solid rgba(3, 160, 71, 0.943);
+    border-radius: 100px;
+}
+
+.btn:hover {
+    text-shadow: none;
+    cursor: pointer;
+    font-size: 27px;
+    color: rgb(0, 48, 21);
+    background-color: rgba(240, 248, 255, 0.717);
+    border: 3px solid rgb(0, 66, 29);
+}
+
+.btn:active{
+    transform: translateY(3px);
+    font-weight: 300;
+}
+
+.maquina {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid black;
+    animation: escribir 4s steps(40) infinite;
+}
+
+.texto {
+    text-shadow: 4px 3px 2px rgba(0,118,14,0.6);
+    background-color: rgba(240, 248, 255, 0.451);
+    display: block;
+    color: rgb(0, 66, 29);
+    font-size: 45px;
+}
+
+@keyframes escribir {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 88%;
+    }
+}

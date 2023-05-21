@@ -1,0 +1,190 @@
+.contForm {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+::placeholder {
+    color: white;
+}
+
+.contDivs {
+    margin: 30px 0;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.inputs > input {
+    padding: 5px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    outline: none;
+    appearance: none;
+    align-self: center;
+    width: 350px;
+}
+
+.inputs > textarea {
+    resize: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    outline: none;
+    appearance: none;
+    align-self: center;
+    height: 100px;
+    width: 550px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.error {
+    position: relative;
+}
+
+.error > input,
+.error > textarea {
+    border: 2px solid red;
+}
+
+.error > .errorMessage {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.752);
+    text-align: center;
+}
+
+.contDivsGenPlat {
+    text-align: center;
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    text-shadow: 4px 4px 2px rgb(0, 106, 145);
+}
+
+.contPlatGen {
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contPlatGen label {
+    text-align: center;
+    background-color: rgb(12, 65, 78);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contPlatGen label.selected {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.contPlatGen .error label {
+    background-color: red;
+    color: #fff;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.showError {
+    display: block;
+    height: 20px;
+    font-size: 14px;
+}
+
+.errorMessage {
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.btnForm {
+    align-self: center;
+    margin-top: 30px;
+    height: 40px;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(8, 0, 58);
+    padding: 11px;
+    border-radius: 50px;
+    font-family: "Colus", sans-serif;
+}
+
+.btnForm:hover {
+    cursor: pointer;
+    color: rgb(8, 0, 58);
+    background-color: rgba(245, 245, 220, 0.541);
+}
+
+.btnDisabled {
+    opacity: 0.5;
+    align-self: center;
+    margin-top: 30px;
+    height: 40px;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(8, 0, 58);
+    padding: 11px;
+    border-radius: 50px;
+    font-family: "Colus", sans-serif;
+}
+
+.successMessage {
+    border-radius: 50px;
+    padding: 8px;
+    text-align: center;
+    background-color: #137e40;
+    margin-top: 10px;
+    animation: fadeOut 3s ease-in;
+}
+
+.erroresMessage {
+    border-radius: 50px;
+    padding: 8px;
+    text-align: center;
+    background-color: #940202;
+    margin-top: 10px;
+    animation: fadeOut 3s ease-in;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

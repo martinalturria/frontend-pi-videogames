@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    margin: 0 auto;
+    width: 70%;
+    height: 70%;
+    background: linear-gradient(to bottom, rgba(0, 106, 145, 0.8), rgb(0, 14, 51));
+    margin: 15px;
+    padding: 25px;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 0px 106px -13px rgba(255, 255, 255, 0.75);
+}
+
+.title {
+    text-align: center;
+    margin: 30px;
+    align-self: center;
+    text-shadow: 4px 4px 2px rgb(0, 106, 145);
+}
+
+.cardImage {
+    height: 60%;
+    width: 60%;
+    border-radius: 40px;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titles {
+    text-decoration: underline;
+    margin: 15px 0px;
+    font-size: 18px;
+    text-shadow: 4px 4px 2px rgb(0, 106, 145);
+}
+
+.cardContent p {
+    text-align: center;
+    font-size: 15px;
+}
+
+.ratRel {
+    display: flex;
+    gap: 30px;
+}
+
+.ratRelFont {
+    margin: 15px 0px;
+    font-size: 18px;
+}
+
+.platGen {
+    font-size: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.platGenFont {
+    margin: 15px;
+    font-size: 15px;
+}
+
+.contBtn {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.button {
+    margin-top: 30px;
+    height: 40px;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(8, 0, 58);
+    border: none;
+    appearance: none;
+    padding: 11px;
+    border-radius: 50px;
+    font-family: "Colus", sans-serif;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: rgb(8, 0, 58);
+    background-color: rgba(245, 245, 220, 0.541);
+}
+
+.contLoading {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

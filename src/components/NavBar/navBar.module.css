@@ -1,0 +1,25 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    padding: 15px;
+    gap: 40px;
+}
+
+.btnsNav {
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+.btnsNav:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(255, 255, 255, 0.3);
+}

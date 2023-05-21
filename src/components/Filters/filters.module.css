@@ -1,0 +1,53 @@
+@import url('https://fonts.cdnfonts.com/css/colus');
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.container select {
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Colus', sans-serif;
+    background-color: transparent;
+}
+
+select option {
+    appearance: none;
+    color: white;
+    background-color: rgb(0, 106, 145);
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Colus', sans-serif;
+}
+
+.btn_reset{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(0, 106, 145);
+    border: none;
+    appearance: none;
+    padding: 6px;
+    border-radius: 50px;
+    font-family: 'Colus', sans-serif;
+}
+
+.btn_reset:active{
+    transform: translateY(2px);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.btn_reset:hover{
+    cursor: pointer;
+    color: rgb(8, 0, 58);;
+    background-color: rgba(245, 245, 220, 0.541);
+}

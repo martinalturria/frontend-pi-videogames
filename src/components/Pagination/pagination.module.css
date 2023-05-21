@@ -1,0 +1,39 @@
+.active {
+    cursor: pointer;
+    color: white;
+    width: 25px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(9, 53, 64);
+    appearance: none;
+    border: 1px solid white;
+    border-radius: 50px;
+    margin: 0 10px;
+}
+
+.numbers {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(9, 53, 64);
+    appearance: none;
+    border: 1px solid white;
+    border-radius: 50px;
+    margin: 0 10px;
+}
+
+.prevnext {
+    padding: 3px 10px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(18, 83, 99);
+    appearance: none;
+    border: 1px solid white;
+    border-radius: 50px;
+    margin: 0 10px;
+}
+
+.prevnext:active {
+    box-shadow: -1px 7px 36px 10px white;
+
+}

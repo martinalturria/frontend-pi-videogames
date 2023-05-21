@@ -1,0 +1,47 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    border-radius: 30px;
+}
+
+.genresContainer {    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.genre{
+    padding: 5px;
+    border-radius: 15px;
+    background-color: rgba(245, 245, 220, 0.541);
+    color: rgb(8, 0, 58);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.name {
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgba(245, 245, 220, 0.556);
+    color: rgb(8, 0, 58);
+    text-transform: uppercase;
+}
+
+.rating{
+    padding: 5px;
+    border-radius: 15px;
+    background-color: rgb(0, 106, 145);
+    color: white;
+    font-weight: bold;
+}
+
+.more{
+    background-color: rgba(245, 245, 220, 0.556);
+    color: rgb(8, 0, 58);
+    text-transform: uppercase;
+}
