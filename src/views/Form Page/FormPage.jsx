@@ -73,7 +73,7 @@ const FormPage = () => {
 
         if (isCreating) {
             axios
-                .post("http://localhost:3001/videogames", newGame)
+                .post("/videogames", newGame)
                 .then((res) => {
                     setSuccessMessage("The game has been created successfully");
                     setErrorsMessage("");
@@ -86,9 +86,8 @@ const FormPage = () => {
                     setSuccessMessage("")
                 );
         } else {
-            console.log(newGame);
             axios
-                .put(`http://localhost:3001/videogames/${newGame.id}`, newGame)
+                .put(`/videogames/${newGame.id}`, newGame)
                 .then((res) => {
                     setSuccessMessage("The game has been updated successfully");
                     setErrorsMessage("");

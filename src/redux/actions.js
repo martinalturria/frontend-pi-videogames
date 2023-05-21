@@ -13,10 +13,12 @@ import {
 } from "./actionsTypes";
 import axios from "axios";
 
+axios.defaults.baseURL = "backend-pi-videogames-production-eee1.up.railway.app";
+
 export const getGenres = () => {
     return async (dispatch) => {
         try {
-            const { data } = await axios.get(`http://localhost:3001/genres`);
+            const { data } = await axios.get(`/genres`);
             return dispatch({ type: GET_GENRES, payload: data });
         } catch ({ response }) {
             dispatch({ type: SET_ERROR, payload: response.data.error });
@@ -28,7 +30,7 @@ export const getVideoGames = () => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `http://localhost:3001/videogames`
+                `/videogames`
             );
             return dispatch({ type: GET_VIDEOGAMES, payload: data });
         } catch ({ response }) {
@@ -41,7 +43,7 @@ export const getVideoGameById = (id) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `http://localhost:3001/videogames/${id}`
+                `/videogames/${id}`
             );
             return dispatch({ type: GET_VIDEOGAME_BY_ID, payload: data });
         } catch ({ response }) {
@@ -67,7 +69,7 @@ export const getByName = (name) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `http://localhost:3001/videogames?name=${name}`
+                `/videogames?name=${name}`
             );
             return dispatch({ type: GET_VIDEOGAME_BY_NAME, payload: data });
         } catch ({ response }) {
@@ -87,7 +89,7 @@ export const getUpdateGame = (id) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `http://localhost:3001/videogames/${id}`
+                `/videogames/${id}`
             );
             data.genres = data.genres.map((genre) => genre.id);
             return dispatch({ type: UPDATE, payload: data });
