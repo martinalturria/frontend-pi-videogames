@@ -33,11 +33,11 @@ const DetailPage = () => {
 
         if (confirmDelete) {
             axios
-                .delete(`http://localhost:3001/videogames/${id}`)
+                .delete(`https://backend-pi-videogames-production-eee1.up.railway.app/videogames/${id}`)
                 .then((res) => {
                     history.push("/home");
                 })
-                .catch((res) => window.alert(res));
+                .catch((res) => window.alert(res.message));
         }else{
             event.preventDefault()
         }

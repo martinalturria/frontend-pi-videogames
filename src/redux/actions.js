@@ -13,12 +13,12 @@ import {
 } from "./actionsTypes";
 import axios from "axios";
 
-axios.defaults.baseURL = "backend-pi-videogames-production-eee1.up.railway.app";
+
 
 export const getGenres = () => {
     return async (dispatch) => {
         try {
-            const { data } = await axios.get(`/genres`);
+            const { data } = await axios.get(`https://backend-pi-videogames-production-eee1.up.railway.app/genres`);
             return dispatch({ type: GET_GENRES, payload: data });
         } catch ({ response }) {
             dispatch({ type: SET_ERROR, payload: response.data.error });
@@ -30,7 +30,7 @@ export const getVideoGames = () => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `/videogames`
+                `https://backend-pi-videogames-production-eee1.up.railway.app/videogames`
             );
             return dispatch({ type: GET_VIDEOGAMES, payload: data });
         } catch ({ response }) {
@@ -43,7 +43,7 @@ export const getVideoGameById = (id) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `/videogames/${id}`
+                `https://backend-pi-videogames-production-eee1.up.railway.app/videogames/${id}`
             );
             return dispatch({ type: GET_VIDEOGAME_BY_ID, payload: data });
         } catch ({ response }) {
@@ -69,7 +69,7 @@ export const getByName = (name) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `/videogames?name=${name}`
+                `https://backend-pi-videogames-production-eee1.up.railway.app/videogames?name=${name}`
             );
             return dispatch({ type: GET_VIDEOGAME_BY_NAME, payload: data });
         } catch ({ response }) {
@@ -89,7 +89,7 @@ export const getUpdateGame = (id) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `/videogames/${id}`
+                `https://backend-pi-videogames-production-eee1.up.railway.app/videogames/${id}`
             );
             data.genres = data.genres.map((genre) => genre.id);
             return dispatch({ type: UPDATE, payload: data });

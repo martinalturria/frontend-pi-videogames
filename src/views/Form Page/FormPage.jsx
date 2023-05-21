@@ -73,7 +73,7 @@ const FormPage = () => {
 
         if (isCreating) {
             axios
-                .post("/videogames", newGame)
+                .post("https://backend-pi-videogames-production-eee1.up.railway.app/videogames", newGame)
                 .then((res) => {
                     setSuccessMessage("The game has been created successfully");
                     setErrorsMessage("");
@@ -87,7 +87,7 @@ const FormPage = () => {
                 );
         } else {
             axios
-                .put(`/videogames/${newGame.id}`, newGame)
+                .put(`https://backend-pi-videogames-production-eee1.up.railway.app/videogames/${newGame.id}`, newGame)
                 .then((res) => {
                     setSuccessMessage("The game has been updated successfully");
                     setErrorsMessage("");
