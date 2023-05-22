@@ -24,10 +24,10 @@ const HomePage = () => {
     const currentPages = useSelector((state) => state.currentPage);
     const error = useSelector((state) => state.errors);
 
-    // Filtrado de Games
+    // Filters Games
     const filterVideoGames = filtered(videoGames, filterGames);
 
-    // Paginado
+    // Pagination
     const gamesForPage = 15;
     const indexLastGames = currentPages * gamesForPage;
     const indexFirstGames = indexLastGames - gamesForPage;
@@ -72,11 +72,11 @@ const HomePage = () => {
                 />
             </div>
             <div>
-                {currentGames.length === 0 && !videoGames.length ? (
+                {!currentGames.length && !videoGames.length ? (
                     <div className={styles.contLoading}>
                         <Loading />
                     </div>
-                ) : currentGames.length === 0 ? (
+                ) : !currentGames.length ? (
                     <div className={styles.containerNoFilters}>
                         <span className={styles.noFilters}> No games found with filters applied, Try other Filters</span>
                     </div>

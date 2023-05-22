@@ -7,9 +7,9 @@ import {
     getUpdateGame,
     resetDetail,
 } from "../../redux/actions";
-import ErrorPage from "../ErrorPage/ErrorPage";
+import {ErrorPage} from "../index";
 import Loading from "../../components/Loading/Loadin";
-import axios from "axios";
+import requestDelete from "./auxiliaries/request";
 
 const DetailPage = () => {
     const { id } = useParams();
@@ -19,6 +19,10 @@ const DetailPage = () => {
     const error = useSelector((state) => state.errors);
     const dispatch = useDispatch();
 
+    const deleteGame = (event) => {
+        requestDelete(event, history, id);
+    };
+
     useEffect(() => {
         dispatch(getVideoGameById(id));
 
@@ -26,22 +30,6 @@ const DetailPage = () => {
             dispatch(resetDetail());
         };
     }, [dispatch, id]);
-
-    const deleteGame = (event) => {
-
-        const confirmDelete = window.confirm("Do you want to delete the game?");
-
-        if (confirmDelete) {
-            axios
-                .delete(`https://backend-pi-videogames-production-eee1.up.railway.app/videogames/${id}`)
-                .then((res) => {
-                    history.push("/home");
-                })
-                .catch((res) => window.alert(res.message));
-        }else{
-            event.preventDefault()
-        }
-    };
 
     if (error) return <ErrorPage />;
 

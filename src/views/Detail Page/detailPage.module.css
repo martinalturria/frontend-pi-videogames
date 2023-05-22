@@ -62,6 +62,7 @@
 .platGen {
     font-size: 10px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
