@@ -5,8 +5,6 @@ import {
     RESET_DETAIL,
     SET_ERROR,
     SET_FILTER,
-    GET_VIDEOGAME_BY_NAME,
-    SET_RESULTS_SEARCH,
     UPDATE,
     SET_PAGE,
     SET_UPDATE_GAME,
@@ -65,23 +63,17 @@ export const resetDetail = () => {
     };
 };
 
-export const getByName = (name) => {
+export const getByName = (nameSearch, name) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(
-                `https://backend-pi-videogames-production-eee1.up.railway.app/videogames?name=${name}`
+                `https://backend-pi-videogames-production-eee1.up.railway.app/videogames?name=${nameSearch}`
             );
-            return dispatch({ type: GET_VIDEOGAME_BY_NAME, payload: data });
+            const value = data
+            return dispatch({ type: SET_FILTER, payload: {name, value} });
         } catch ({ response }) {
             dispatch({ type: SET_ERROR, payload: response.data.error });
         }
-    };
-};
-
-export const setResultsSearch = (name) => {
-    return {
-        type: SET_RESULTS_SEARCH,
-        payload: [],
     };
 };
 

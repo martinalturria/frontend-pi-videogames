@@ -6,7 +6,6 @@ import {
     SET_ERROR,
     SET_FILTER,
     GET_VIDEOGAME_BY_NAME,
-    SET_RESULTS_SEARCH,
     UPDATE,
     SET_PAGE,
     SET_UPDATE_GAME,
@@ -16,8 +15,8 @@ const initialState = {
     videoGames: [],
     genresGames: [],
     detailGame: {},
-    searchResults: [],
     filterGames: {
+        searchResults: [],
         genres: "ALL",
         origin: "ALL",
         ordering: "ALL",
@@ -64,11 +63,6 @@ const reducer = (state = initialState, { type, payload }) => {
                 },
             };
         case GET_VIDEOGAME_BY_NAME:
-            return {
-                ...state,
-                searchResults: payload,
-            };
-        case SET_RESULTS_SEARCH:
             return {
                 ...state,
                 searchResults: payload,

@@ -2,14 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { currentPage, getByName } from "../../redux/actions";
-import styles from "./seachBar.module.css"
+import styles from "./seachBar.module.css";
 
 const SearchBar = () => {
     const [nameSearch, setNameSearch] = useState("");
     const dispatch = useDispatch();
 
-    const handleSearch = (nameSearch) => {
-        dispatch(getByName(nameSearch));
+    const handleSearch = (nameSearch, name) => {
+        dispatch(getByName(nameSearch, name));
 
         dispatch(currentPage(1));
     };
@@ -20,23 +20,27 @@ const SearchBar = () => {
 
     const handleKeyPress = (event) => {
         if (event.key === "Enter") {
-            handleSearch(nameSearch);
+            handleSearch(nameSearch, event.target.name);
             setNameSearch("");
         }
     };
 
     return (
         <div>
-            <input className={styles.inputSearch}
+            <input
+                className={styles.inputSearch}
                 type="text"
+                name="searchResults"
                 value={nameSearch}
                 onChange={handleInput}
                 onKeyDown={handleKeyPress}
                 placeholder="Search Name..."
             />
-            <button className={styles.btnSearch}
-                onClick={() => {
-                    handleSearch(nameSearch);
+            <button
+                className={styles.btnSearch}
+                name="searchResults"
+                onClick={(event) => {
+                    handleSearch(nameSearch, event.target.name);
                     setNameSearch("");
                 }}
             >

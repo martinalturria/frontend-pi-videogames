@@ -1,4 +1,3 @@
-import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import filtered from "./auxiliaries/filtered";
 import styles from "./homePage.module.css";
 import { useEffect } from "react";
@@ -9,23 +8,27 @@ import {
     currentPage,
     setDetailUpdate,
 } from "../../redux/actions";
-import Pagination from "../../components/Pagination/Pagination";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import Filter from "../../components/Filters/Filters";
-import ErrorPage from "../ErrorPage/ErrorPage";
-import Loading from "../../components/Loading/Loadin";
+import {
+    CardsContainer,
+    Pagination,
+    SearchBar,
+    Filter,
+    Loading,
+} from "../../components/index";
+import { ErrorPage } from "../index";
 
 const HomePage = () => {
     const dispatch = useDispatch();
 
     const videoGames = useSelector((state) => state.videoGames);
     const filterGames = useSelector((state) => state.filterGames);
-    const searchResults = useSelector((state) => state.searchResults);
     const currentPages = useSelector((state) => state.currentPage);
     const error = useSelector((state) => state.errors);
 
     // Filters Games
-    const filterVideoGames = filtered(videoGames, filterGames);
+    const filterVideoGames = !filterGames.searchResults.length
+        ? filtered(videoGames, filterGames)
+        : filtered(filterGames.searchResults, filterGames);
 
     // Pagination
     const gamesForPage = 15;
@@ -63,11 +66,7 @@ const HomePage = () => {
                 <Pagination
                     currentPage={currentPages}
                     gamesForPage={gamesForPage}
-                    totalGames={
-                        !searchResults.length
-                            ? filterVideoGames.length
-                            : searchResults.length
-                    }
+                    totalGames={filterVideoGames.length}
                     handlePage={handlePage}
                 />
             </div>
@@ -78,14 +77,14 @@ const HomePage = () => {
                     </div>
                 ) : !currentGames.length ? (
                     <div className={styles.containerNoFilters}>
-                        <span className={styles.noFilters}> No games found with filters applied, Try other Filters</span>
+                        <span className={styles.noFilters}>
+                            {" "}
+                            No games found with filters applied, Try other
+                            Filters
+                        </span>
                     </div>
                 ) : (
-                    <CardsContainer
-                        currentGames={
-                            !searchResults.length ? currentGames : searchResults
-                        }
-                    />
+                    <CardsContainer currentGames={currentGames} />
                 )}
             </div>
         </div>

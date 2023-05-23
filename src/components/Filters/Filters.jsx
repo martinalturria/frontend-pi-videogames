@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { currentPage, setFilter, setResultsSearch } from "../../redux/actions";
+import { currentPage, setFilter } from "../../redux/actions";
 import styles from "./filters.module.css";
 
 const Filter = ({ filterGames }) => {
@@ -17,7 +17,7 @@ const Filter = ({ filterGames }) => {
         dispatch(setFilter("origin", "ALL"));
         dispatch(setFilter("ordering", "ALL"));
         dispatch(setFilter("rating", "ALL"));
-        dispatch(setResultsSearch([]));
+        dispatch(setFilter("searchResults", []));
         dispatch(currentPage(1));
     };
 

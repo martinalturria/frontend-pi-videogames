@@ -7,8 +7,8 @@ import {
     getUpdateGame,
     resetDetail,
 } from "../../redux/actions";
-import {ErrorPage} from "../index";
-import Loading from "../../components/Loading/Loadin";
+import { ErrorPage } from "../index";
+import { Loading } from "../../components/index";
 import requestDelete from "./auxiliaries/request";
 
 const DetailPage = () => {

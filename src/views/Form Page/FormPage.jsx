@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import GetPlataforms from "./auxiliaries/getPlataforms";
 import validate from "./auxiliaries/vildate";
-import requestForm from "./auxiliaries/requestForm"
+import requestForm from "./auxiliaries/requestForm";
 import styles from "./formPage.module.css";
-import GameForm from "../../components/GamesForm/GamesForm";
+import { GameForm } from "../../components/index";
 
 const FormPage = () => {
     const elementsGame = {
