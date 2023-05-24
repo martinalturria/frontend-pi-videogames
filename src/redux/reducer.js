@@ -15,6 +15,7 @@ const initialState = {
     videoGames: [],
     genresGames: [],
     detailGame: {},
+    detailGameUpdate: {},
     filterGames: {
         searchResults: [],
         genres: "ALL",
@@ -24,7 +25,6 @@ const initialState = {
     },
     currentPage: 1,
     errors: null,
-    detailGameUpdate: {},
 };
 
 const reducer = (state = initialState, { type, payload }) => {
@@ -44,11 +44,12 @@ const reducer = (state = initialState, { type, payload }) => {
                 ...state,
                 detailGame: payload,
             };
-        case RESET_DETAIL:
+        case GET_VIDEOGAME_BY_NAME:
             return {
                 ...state,
-                detailGame: {},
+                searchResults: payload,
             };
+
         case SET_ERROR:
             return {
                 ...state,
@@ -62,26 +63,29 @@ const reducer = (state = initialState, { type, payload }) => {
                     [payload.name]: payload.value,
                 },
             };
-        case GET_VIDEOGAME_BY_NAME:
-            return {
-                ...state,
-                searchResults: payload,
-            };
-        case UPDATE:
-            return {
-                ...state,
-                detailGameUpdate: payload,
-            };
         case SET_UPDATE_GAME:
             return {
                 ...state,
-                detailGameUpdate: {}
-            }    
+                detailGameUpdate: {},
+            };
         case SET_PAGE:
             return {
                 ...state,
                 currentPage: payload,
             };
+
+        case RESET_DETAIL:
+            return {
+                ...state,
+                detailGame: {},
+            };
+
+        case UPDATE:
+            return {
+                ...state,
+                detailGameUpdate: payload,
+            };
+
         default:
             return { ...state };
     }

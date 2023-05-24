@@ -78,12 +78,6 @@ export const getVideoGameById = (id) => {
     };
 };
 
-export const resetDetail = () => {
-    return {
-        type: RESET_DETAIL,
-    };
-};
-
 export const setFilter = (name, value) => {
     return {
         type: SET_FILTER,
@@ -101,6 +95,12 @@ export const setErrors = (messaege = null) => {
     return {
         type: SET_ERROR,
         payload: messaege,
+    };
+};
+
+export const resetDetail = () => {
+    return {
+        type: RESET_DETAIL,
     };
 };
 
