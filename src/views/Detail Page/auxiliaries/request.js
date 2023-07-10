@@ -7,7 +7,7 @@ const requestDelete = (event, history, id) => {
 
     if (confirmDelete) {
         axios
-            .delete(`https://backend-pi-videogames-production-eee1.up.railway.app/videogames/${id}`)
+            .delete(`http://localhost:3001/videogames/${id}`)
             .then((res) => {
                 history.push("/home");
             })

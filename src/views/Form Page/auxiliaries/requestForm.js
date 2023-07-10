@@ -4,7 +4,7 @@ const requestForm = (isCreating, setErrorsMessage, setSuccessMessage, setErrors,
 
     if (isCreating) {
         axios
-            .post("https://backend-pi-videogames-production-eee1.up.railway.app/videogames", newGame)
+            .post("http://localhost:3001/videogames", newGame)
             .then((res) => {
                 setSuccessMessage("The game has been created successfully");
                 setErrorsMessage("");
@@ -18,7 +18,7 @@ const requestForm = (isCreating, setErrorsMessage, setSuccessMessage, setErrors,
             );
     } else {
         axios
-            .put(`https://backend-pi-videogames-production-eee1.up.railway.app/videogames/${newGame.id}`, newGame)
+            .put(`http://localhost:3001/videogames/${newGame.id}`, newGame)
             .then((res) => {
                 setSuccessMessage("The game has been updated successfully");
                 setErrorsMessage("");
